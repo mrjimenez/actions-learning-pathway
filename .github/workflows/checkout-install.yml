@@ -1,0 +1,21 @@
+name: Run checkout to install
+on:
+  workflow_call:
+    # Introduced 'inputs' to define parameters that can be passed when calling this workflow
+    inputs:
+      node-version:
+        description: "Node version"
+        required: true
+        type: string
+jobs:
+  checkout-to-install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        # Modified to use the node-version from the workflow inputs
+      - name: Setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node-version }}
+      - run: npm install
