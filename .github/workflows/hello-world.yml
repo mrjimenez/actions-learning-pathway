@@ -24,8 +24,10 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "### Hello world! 🚀" >> $GITHUB_STEP_SUMMARY
-      - run: echo "- workspace: ${{ github.workspace }}" >> $GITHUB_STEP_SUMMARY
-      - run: echo "- Event: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
-      - run: echo "- Runner OS: ${{ runner.os }}" >> $GITHUB_STEP_SUMMARY
-      - run: echo "- Repo: ${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
-      - run: echo "- Branch: ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY
+      - run: echo >> $GITHUB_STEP_SUMMARY
+      - run: echo "- Workspace -> ${{ github.workspace }}" >> $GITHUB_STEP_SUMMARY
+      - run: echo "- Event     -> ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+      - run: echo "- Runner OS -> ${{ runner.os }}" >> $GITHUB_STEP_SUMMARY
+      - run: echo "- Repo      -> ${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
+      - run: echo "- Branch    -> ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY
+      - run: echo "- Job Status-> ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
