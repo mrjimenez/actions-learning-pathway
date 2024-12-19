@@ -21,18 +21,9 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          ls -la ${{ github.workspace }} >> $GITHUB_STEP_SUMMARY
+      - run: echo "🍏 This job's status is ${{ job.status }}." >> $GITHUB_STEP_SUMMARY
       - run: echo "### Hello world! 🚀" >> $GITHUB_STEP_SUMMARY
-      - run: echo >> $GITHUB_STEP_SUMMARY
-      - run: echo "| Variable   | Value |"                    >> $GITHUB_STEP_SUMMARY
-      - run: echo "|------------|-------|"                    >> $GITHUB_STEP_SUMMARY
-      - run: echo "| Workspace  | ${{ github.workspace }}  |" >> $GITHUB_STEP_SUMMARY
-      - run: echo "| Event      | ${{ github.event_name }} |" >> $GITHUB_STEP_SUMMARY
-      - run: echo "| Runner OS  | ${{ runner.os }}         |" >> $GITHUB_STEP_SUMMARY
-      - run: echo "| Repo       | ${{ github.repository }} |" >> $GITHUB_STEP_SUMMARY
-      - run: echo "| Branch     | ${{ github.ref }}        |" >> $GITHUB_STEP_SUMMARY
-      - run: echo "| Job Status | ${{ job.status }}        |" >> $GITHUB_STEP_SUMMARY
       - name: Echo Multiline Markdown
         run: |
           echo "### Hello world! 🚀" >> $GITHUB_STEP_SUMMARY
