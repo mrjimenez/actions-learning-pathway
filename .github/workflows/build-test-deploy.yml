@@ -61,4 +61,4 @@ jobs:
         # we used this identifier to grab the URL for our site with url:
         # ${{ steps.deployment.outputs.page_url }}
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
