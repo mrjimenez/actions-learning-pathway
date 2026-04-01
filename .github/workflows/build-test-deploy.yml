@@ -48,7 +48,7 @@ jobs:
         with:
           node-version: "24.x"
       - name: configure github pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
         with:
           static_site_generator: next
       - run: npm install
